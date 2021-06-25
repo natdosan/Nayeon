@@ -32,17 +32,25 @@ y = np.array(data[predict])
 
 # find the best model
 best = 0
+accuracies = []
 for i in range(30):
     x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, y, test_size=0.2)
     linear = linear_model.LinearRegression()
     linear.fit(x_train, y_train)
     accuracy = linear.score(x_test, y_test)
     print(accuracy)
+    accuracies.append(accuracy)
 
     if accuracy > best:
         best = accuracy
     with open("restaurant_model.pickle", "wb") as f:
         pickle.dump(linear, f)
+
+# training statistics        
+average = sum(accuracies) / len(accuracies)
+
+print('Best accuracy: ', best)
+print('Average accuracy: ', average)
 
 # saving model
 pickle_in = open("restaurant_model.pickle", "rb")
