@@ -13,6 +13,7 @@ In addition to visualization, this script will also predict a chosen variable ba
    ```
    independent = "Age"
    ```
+   Note: these assignments must match exactly with the column titles in the csv/txt file
 
 # How it works
 I used libraries such as tensorflow, keras, and sklearn for training and testing models. For visualization, pyplot from the matplotlib library served as a convenient way of graphing the real data. 
