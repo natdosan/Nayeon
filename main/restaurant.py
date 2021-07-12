@@ -76,6 +76,17 @@ pyplot.scatter(data[correlationVariable], data["Total"])
 # pyplot.hist(data[correlationVariable], histtype='bar', align='mid', orientation='vertical')
 
 """
+    Correlation coefficient, r
+"""
+x = pd.Series(data[correlationVariable])
+y1 = pd.Series(data["Visits"])
+y2 = pd.Series(data["Total"])
+
+r1 = x.corr(y1)
+r2 = x.corr(y2)
+print("r of Visits = ", r1, "r of Total $ Spent = ", r2)
+
+"""
     3d visualization
     docu:
     https://matplotlib.org/stable/tutorials/toolkits/mplot3d.html#toolkit-mplot3d-tutorial
