@@ -1,9 +1,9 @@
 """
-    Data visualization and regression
-    Copyright (c) 2021, sjuksee
+    Data visualization and simple linear regression
+    Copyright (c) 2021, natdosan
     Author: [sjkuksee]
     Date Created: 210625
-    Last updated: 210703
+    Last updated: 230224
 """
 
 import numpy as np
