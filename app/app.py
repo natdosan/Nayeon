@@ -37,28 +37,40 @@ app.layout = html.Div(
             type="number", 
             placeholder=0),
         html.Br(),
-        html.Label("Items: "),
+        html.Label(
+            "Items: ",
+            style = {'display': 'flex'}
+        ),
         dcc.Input(
             id="feature2",
             type="number",
             placeholder=0
         ),
         html.Br(),
-        html.Label("Age: "),
+        html.Label(
+            "Age: ",
+            style = {'display': 'flex'}
+        ),
         dcc.Input(
             id="feature3", 
             type="number", 
             placeholder=0
         ),
         html.Br(),
-        html.Label("Solo: "),
+        html.Label(
+            "Solo: ",
+            style = {'display': 'flex'}
+        ),
         dcc.Input(
             id="feature4",
             type="number", 
             placeholder=0
         ),
         html.Br(),
-        html.Label("Duplicates: "),
+        html.Label(
+            "Duplicates: ",
+            style = {'display': 'flex'}
+        ),
         dcc.Input(
             id="feature5",
             type="number", 
@@ -71,7 +83,10 @@ app.layout = html.Div(
             children="Submit"
         ),
         html.Br(),
-        html.Label("Predicted value:"),
+        html.Label(
+            "Predicted value:",
+            style = {'display': 'flex'}
+        ),
         html.Div(id="output")
 ])
 
