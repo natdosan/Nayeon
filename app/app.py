@@ -8,6 +8,7 @@ from dash import callback
 import pandas as pd
 import numpy as np
 import pickle
+import argparse
 
 filepath = '../models/multiple_model.pickle'
 
@@ -36,7 +37,6 @@ app.layout = html.Div(
             id="feature1", 
             type="number", 
             placeholder=0),
-        html.Br(),
         html.Label(
             "Items: ",
             style = {'display': 'flex'}
@@ -46,7 +46,6 @@ app.layout = html.Div(
             type="number",
             placeholder=0
         ),
-        html.Br(),
         html.Label(
             "Age: ",
             style = {'display': 'flex'}
@@ -56,7 +55,6 @@ app.layout = html.Div(
             type="number", 
             placeholder=0
         ),
-        html.Br(),
         html.Label(
             "Solo: ",
             style = {'display': 'flex'}
@@ -66,7 +64,6 @@ app.layout = html.Div(
             type="number", 
             placeholder=0
         ),
-        html.Br(),
         html.Label(
             "Duplicates: ",
             style = {'display': 'flex'}
@@ -76,13 +73,11 @@ app.layout = html.Div(
             type="number", 
             placeholder=0
         ),
-        html.Br(),
         html.Button(
             id="submit-button", 
             n_clicks=0, 
             children="Submit"
         ),
-        html.Br(),
         html.Label(
             "Predicted value:",
             style = {'display': 'flex'}
@@ -127,10 +122,11 @@ def update_output(n_clicks, feature1, feature2, feature3, feature4, feature5):
     """
     input_array = np.array([[feature1, feature2, feature3, feature4, feature5]])
     # Make the prediction using the loaded model
+    print(model.predict(input_array))
     prediction = model.predict(input_array)[0]
     # Return the predicted value as the output
     return f"{prediction}"
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True, port=8080)
