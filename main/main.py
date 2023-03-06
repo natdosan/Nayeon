@@ -4,8 +4,6 @@
 """
 import numpy as np
 import pandas as pd
-import tensorflow
-import keras
 import sklearn
 from sklearn import linear_model
 from sklearn.utils import shuffle
@@ -13,6 +11,7 @@ import csv
 import matplotlib.pyplot as pyplot
 import pickle
 from matplotlib import style
+
 data = pd.read_csv("restaurant.csv", sep=",")
 print(data.head())
 
