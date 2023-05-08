@@ -2,7 +2,7 @@
 
 
 # Nayeon - A project to analyze statistical trends in numerical data
-
+View Statistical Analysis [here](assets/Nayeon.pdf)
 
 This is a simple script that generates a regression model for a dataset. For this example, I used customer information for a restaurant. 
 
